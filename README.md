@@ -1,34 +1,80 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Getting Started REST API & Web Architecture
 
-First, run the development server:
+The main stacks are **Next.js , Firebase, and Redux**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## REST API
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 1. Login
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Method: POST
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+URL: https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAAFRXm7fY0YkyUW_sAkhxGwJdb_3Ldw5M
 
-## Learn More
+Header: -
 
-To learn more about Next.js, take a look at the following resources:
+Params: -
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Body: {
+        email: "enrio@gmail.com",
+        password: 'ririo554',
+        returnSecureToken: true,
+      }
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 2. Register
 
-## Deploy on Vercel
+Method: POST
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+URL: https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAAFRXm7fY0YkyUW_sAkhxGwJdb_3Ldw5M
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Header: -
+
+Params: -
+
+Body: {
+        email: "enrio@gmail.com",
+        password: 'ririo554',
+        returnSecureToken: true,
+      }
+
+### 3. Get List
+
+Method: GET
+
+URL: https://todo-binar-react-default-rtdb.asia-southeast1.firebasedatabase.app/toDo/${id}.json
+
+Header: -
+
+Params: id (user ID)
+
+Body: -
+
+### 4. Edit List
+
+Method: PUT
+
+URL: https://todo-binar-react-default-rtdb.asia-southeast1.firebasedatabase.app/toDo/${id}.json
+
+Header: -
+
+Params: id (user ID)
+
+Body: {
+      userToDo: ['Have lots of money', 'Work remotely'],
+    };
+
+
+## Web Architecture
+
+The simple project using redux with only auth reducer that work simmilar as single useState. the auth reducer work to handle todolist array that contain the item. 
+
+The app is using Next.js with latest app routing feature. The pages are login, register, and to-do
+
+The backend is using firebase as BaaS to handle the database and authentication with email and password.
+
+
+
+
+
+
