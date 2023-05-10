@@ -1,0 +1,19 @@
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 36px;
+}
+.add{
+    margin: 20px 0;
+    flex-direction: row;
+}
+.inputStyle{
+    width: 300px;
+}
+.btn{
+    border: 2px solid rgb(81, 202, 113);
+    padding: 4px;
+    margin-left: 7px;
+}

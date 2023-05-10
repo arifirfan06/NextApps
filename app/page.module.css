@@ -1,0 +1,19 @@
+.rootContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 70px 0;
+}
+
+.formStyle{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+.btn{
+  margin-top: 12px;
+  font-size: 19px;
+  border: 2px solid rgb(81, 202, 113);
+  padding: 4px;
+}
